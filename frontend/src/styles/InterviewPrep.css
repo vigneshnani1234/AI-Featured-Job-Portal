@@ -1,0 +1,129 @@
+.tech-interview-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.tech-interview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  background: #e2e8f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tech-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.job-context {
+  background: #f8fafc;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.job-context h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.company {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.description {
+  color: #475569;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.question-block {
+  margin-bottom: 1.5rem;
+}
+
+.question {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: 0.2s;
+}
+
+textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.submit-button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background: #1e40af;
+}
+
+.feedback-section {
+  background: #f1f5f9;
+  border-radius: 12px;
+  margin-top: 2rem;
+  padding: 1.2rem 1.5rem;
+}
+
+.feedback-item {
+  background: #fff;
+  border-left: 4px solid #3b82f6;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.score-display {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.loading {
+  text-align: center;
+  color: #475569;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
+}

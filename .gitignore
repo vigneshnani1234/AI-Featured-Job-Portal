@@ -1,0 +1,40 @@
+# --- Node / React ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.vite/
+frontend/.next/
+frontend/build/
+
+# --- Python / Flask ---
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/instance/
+backend/.pytest_cache/
+backend/.DS_Store
+backend/uploads/
+backend/__init__.pyc
+backend/myenv/
+
+# --- Python virtual environments ---
+myenv/
+venv/
+env/
+ENV/
+*.egg-info/
+*.egg
+
+# --- Logs and temporary files ---
+*.log
+*.tmp
+*.sqlite3
+*.db
+*.pid
+
+# --- System / IDE files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,77 @@
+/* src/styles/LoginPage.css */
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+  background: linear-gradient(135deg, #e0e7ff, #f3f4f6); /* subtle gradient */
+  overflow: hidden; /* Prevent scrollbars */
+  margin: 0;
+  padding: 0;
+}
+
+/* Card Styling */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title and description */
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.login-description {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+}
+
+/* Login button */
+.login-button {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  font-size: 1.1rem;
+}
+
+.login-button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Redirect message */
+.redirect-message {
+  color: #6b7280;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Subtle fade-in animation for card */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

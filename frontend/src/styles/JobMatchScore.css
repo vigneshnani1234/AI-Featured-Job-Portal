@@ -1,0 +1,192 @@
+/* src/styles/JobMatchScore.css */
+
+.job-match-score-container {
+    min-height: 100vh;
+    background-color: #f9fafb; /* bg-gray-50 */
+    padding: 1.5rem; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.job-match-score-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #ffffff; /* bg-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.job-match-score-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-out-button {
+    background-color: #ef4444; /* bg-red-500 */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-out-button:hover {
+    background-color: #dc2626; /* hover:bg-red-600 */
+}
+
+.job-match-score-main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Spacing between sections */
+    box-sizing: border-box;
+}
+
+/* Job Details Display */
+.job-details-display {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.job-details-title {
+    font-size: 1.625rem; /* text-2xl */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.job-details-company-location {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.job-details-description-wrapper {
+    max-height: 200px; /* Limit height of description */
+    overflow-y: auto; /* Add scroll if content overflows */
+    padding-right: 0.5rem; /* Space for scrollbar */
+    margin-bottom: 1rem;
+}
+
+.job-details-description {
+    font-size: 0.95rem;
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* Match Score Card */
+.match-score-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.resume-upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.upload-label {
+    font-size: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.file-input {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    width: 100%;
+    max-width: 350px;
+    background-color: #f9fafb;
+}
+
+.selected-file {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #22c55e; /* bg-green-500 */
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    max-width: 250px;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #16a34a; /* hover:bg-green-600 */
+}
+
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #9ca3af; /* bg-gray-400 */
+}
+
+.match-results {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    text-align: left; /* Align results text to left */
+}
+
+.match-score-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.score-value {
+    color: #22c55e; /* text-green-500 */
+    font-size: 1.5rem;
+}
+
+.match-explanation {
+    font-size: 1rem;
+    color: #374
