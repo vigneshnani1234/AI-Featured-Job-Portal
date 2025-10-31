@@ -1,4 +1,4 @@
-
+// frontend/src/components/AIFeaturesPage.js
 
 import React from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
@@ -10,7 +10,6 @@ function AIFeaturesPage() {
   const navigate = useNavigate();
   const job = location.state?.job;
 
-  // Handle missing job details (like direct URL access)
   if (!job) {
     return (
       <div className="ai-features-container error-state">
@@ -26,9 +25,10 @@ function AIFeaturesPage() {
     );
   }
 
-  // Helper navigation handler
+  // ✅ CORRECTED: This function now passes the state object with the correct key.
   const handleNavigate = (path) => {
-    navigate(path, { state: { job } });
+    // The key here is now 'jobDetails', which matches what InterviewPrep.js expects.
+    navigate(path, { state: { jobDetails: job } });
   };
 
   return (
@@ -53,7 +53,6 @@ function AIFeaturesPage() {
         <p className="job-overview-description">{job.description}</p>
       </div>
 
-      {/* AI Feature Buttons Section */}
       <div className="ai-modules-grid">
         <div className="ai-module-card">
           <h3 className="ai-module-title">1. Job Match Score</h3>
@@ -62,13 +61,12 @@ function AIFeaturesPage() {
           </p>
           <button
             className="ai-module-button"
+            // You might want to update this one too for consistency
             onClick={() => handleNavigate("/jobscore")}
           >
             Go to Job Match Score →
           </button>
         </div>
-
-        
 
         <div className="ai-module-card">
           <h3 className="ai-module-title">2. Recommended Courses</h3>
@@ -77,7 +75,8 @@ function AIFeaturesPage() {
           </p>
           <button
             className="ai-module-button"
-            onClick={() => navigate("/courses", { state: { job } })}
+            // And this one
+            onClick={() => handleNavigate("/courses")}
           >
             Explore Courses →
           </button>
