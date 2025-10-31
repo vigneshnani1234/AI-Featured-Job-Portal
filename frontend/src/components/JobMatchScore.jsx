@@ -8,7 +8,7 @@ import "../styles/JobMatchScore.css";
 function JobMatchScore() {
   const location = useLocation();
   const navigate = useNavigate();
-  const job = location.state?.job;
+  const job = location.state?.jobDetails;
 
   const [resumeFile, setResumeFile] = useState(null);
   const [matchScore, setMatchScore] = useState(null);

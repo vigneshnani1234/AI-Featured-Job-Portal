@@ -25,9 +25,9 @@ function AIFeaturesPage() {
     );
   }
 
-  // ✅ CORRECTED: This function now passes the state object with the correct key.
+  // Helper function to navigate and pass the job state correctly
   const handleNavigate = (path) => {
-    // The key here is now 'jobDetails', which matches what InterviewPrep.js expects.
+    // The key 'jobDetails' matches what other components like InterviewPrep expect.
     navigate(path, { state: { jobDetails: job } });
   };
 
@@ -61,7 +61,7 @@ function AIFeaturesPage() {
           </p>
           <button
             className="ai-module-button"
-            // You might want to update this one too for consistency
+            // ✅ CORRECTED: Now uses the handleNavigate helper function for consistency and to pass state.
             onClick={() => handleNavigate("/jobscore")}
           >
             Go to Job Match Score →
@@ -75,7 +75,6 @@ function AIFeaturesPage() {
           </p>
           <button
             className="ai-module-button"
-            // And this one
             onClick={() => handleNavigate("/courses")}
           >
             Explore Courses →

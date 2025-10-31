@@ -6,7 +6,7 @@ import "../styles/CoursesPage.css";
 function CoursesPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const job = location.state?.job; // Get job passed from AI Features Page
+  const job = location.state?.jobDetails; // Get job passed from AI Features Page
 
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
