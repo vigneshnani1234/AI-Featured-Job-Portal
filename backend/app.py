@@ -13,9 +13,13 @@ load_dotenv()
 from features.jobs import jobs_bp
 from features.score_predict import resume_tools_bp, load_sbert_model
 from features.predict_courses import courses_bp
-from features.interview_eval import interview_eval_bp  # ✅ no load_llm_model in your current file
+from features.interview_eval import interview_eval_bp
 
 def create_app():
+    """
+    Creates and configures the Flask application. This is known as the
+    'application factory' pattern.
+    """
     app = Flask(__name__)
 
     # ---------------------- LOGGING ----------------------
@@ -31,26 +35,22 @@ def create_app():
     app.config['ADZUNA_API_KEY'] = os.getenv("ADZUNA_API_KEY")
 
     # ---------------------- CORS ----------------------
-    # Allow all origins for local dev; you can restrict it for production later
     CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
     # ---------------------- BLUEPRINTS ----------------------
     app.register_blueprint(jobs_bp)
     app.register_blueprint(resume_tools_bp)
     app.register_blueprint(courses_bp)
-    app.register_blueprint(interview_eval_bp)  # ✅ Added interview_eval routes
+    app.register_blueprint(interview_eval_bp)
 
     # ---------------------- MODELS ----------------------
-    # Load Sentence-BERT model for resume matching
     try:
         load_sbert_model(app)
         app.logger.info("✅ SBERT model loaded successfully.")
     except Exception as e:
         app.logger.error(f"⚠️ Failed to load SBERT model: {e}")
 
-    # In your current interview_eval.py you use mock LLM calls,
-    # so we don’t need to load a model here.
-    app.logger.info("✅ Interview Evaluation feature active (using mock LLM functions).")
+    app.logger.info("✅ Interview Evaluation feature active.")
 
     # ---------------------- ROOT ROUTE ----------------------
     @app.route('/')
@@ -68,7 +68,18 @@ def create_app():
 
     return app
 
+# =================================================================
+#               *** THE CRITICAL CHANGE FOR DEPLOYMENT ***
+# =================================================================
+# This line calls the function above and creates the Flask application
+# instance in the global scope. The variable MUST be named 'app' so that
+# Gunicorn's command `gunicorn app:app` can find it.
+app = create_app()
+# =================================================================
 
+
+# This block is now ONLY used for running the server locally on your computer.
+# Render and Gunicorn will ignore it.
 if __name__ == '__main__':
-    app = create_app()
+    # It uses the 'app' instance created above.
     app.run(host='0.0.0.0', port=5000, debug=True)
